@@ -1,0 +1,22 @@
+doctype html
+html(class="no-js", lang="")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible", content="ie=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="apple-touch-icon", href="apple-touch-icon.png")
+
+    title= title
+    meta(name="description", description=description)
+
+    style#css!= css
+  body
+    #app!= body
+
+    script(src=js)
+
+    if trackingId
+      script.
+        window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+        ga('create','#{trackingId}','auto');ga('send','pageview')
+      script(src="https://www.google-analytics.com/analytics.js", async=true, defer=true)
